@@ -20,14 +20,14 @@ public class mapper {
         BookResponseDto bookResponseDto = new BookResponseDto();
         bookResponseDto.setId(book.getId());
         bookResponseDto.setName(book.getName());
-        List<String>  names = new ArrayList<>();
-        List<Author> authors =new ArrayList<>();
-            for(Author author: authors){
+        bookResponseDto.setCategoryName(book.getCategory().getName());
+        List<String> names = new ArrayList<>();
+        List<Author> authors = book.getAuthors();
+        for (Author author: authors) {
             names.add(author.getName());
-            }
-
-            bookResponseDto.setAuthorNames(names);
-            return bookResponseDto;
+        }
+        bookResponseDto.setAuthorNames(names);
+        return bookResponseDto;
     }
 
     public static List<BookResponseDto> bookToBookResponseDtos(List<Book> books){

@@ -1,5 +1,6 @@
 package com.ernestui.jparelationship.data;
 
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,9 +11,11 @@ import lombok.NoArgsConstructor;
  * @created 02/04/2023 - 20:13
  * @project jpa-relationship
  */
-@Entity
+
 @Data
+@Entity
 @NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "City")
 public class City {
     @Id
